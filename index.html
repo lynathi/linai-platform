@@ -4,96 +4,68 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Neuron | المنصة المدرسية الذكية</title>
-  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- شريط علوي -->
   <header class="topbar">
     <div class="brand">
-      <img src="assets/neuron-logo.png" alt="Neuron" class="logo">
-      <div class="brand-text">
-        <h1>Neuron</h1>
-        <span>المنصة المدرسية الذكية</span>
+      <!-- شعار SVG مدمج (لا يحتاج صورة خارجية) -->
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M32 6c-8 0-14 6-14 14 0 6 3 10 7 13v15a7 7 0 0 0 14 0V33c4-3 7-7 7-13 0-8-6-14-14-14z"
+              fill="none" stroke="#1f7ea8" stroke-width="2" stroke-linecap="round" />
+        <circle cx="26" cy="18" r="2" fill="#1f7ea8"/>
+        <circle cx="38" cy="18" r="2" fill="#1f7ea8"/>
+        <circle cx="32" cy="26" r="2" fill="#1f7ea8"/>
+        <path d="M32 28v6m-6-18v6m12-6v6" stroke="#1f7ea8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="title">
+        <div class="name">Neuron</div>
+        <div class="subtitle">المنصة المدرسية الذكية</div>
       </div>
     </div>
-<!-- ===== Hero / Header ===== -->
-<header class="hero">
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <h1 class="hero__title">Neuron</h1>
-    <h2 class="hero__subtitle">منصّة ذكيّة لإدارة ذات رؤيـة مستقبليّة</h2>
-    <p class="hero__lead">
-      توحِّد الأعمال في تجربة فريدة وأنيقة وسهلة مع لوحة أداء وإحصاءات وتقارير جاهزة للطباعة.
-    </p>
+  </header>
 
-    <ul class="hero__badges">
-      <li>تصميم أنيق</li>
-      <li>لوحة أداء</li>
-      <li>تقارير ذكيّة</li>
-      <li>قابليّة التوسّع</li>
-    </ul>
-  </div>
-</header>
-<!-- ===== /Hero ===== -->
-  <main class="hero">
-    <!-- يسار: تسجيل الدخول -->
-    <section class="card login-card">
-      <h2>تسجيل الدخول</h2>
-      <form id="loginForm">
-        <label>البريد الإلكتروني
-          <input type="email" placeholder="name@school.edu" required>
-        </label>
-        <label>كلمة المرور
-          <input type="password" placeholder="••••••••" required>
-        </label>
-        <button type="submit" class="btn primary">دخول</button>
-        <div class="muted small">
-          مستخدم جديد؟
-          <a href="#" id="openSignUp">إنشاء حساب</a>
-        </div>
-      </form>
-    </section>
-
-    <!-- يمين: نبذة تعريفية -->
-    <section class="card intro-card">
-      <h2>منصة إدارة طلابية برؤية مستقبلية</h2>
-      <p>
-        توحّد <strong>Neuron</strong> أعمال الشؤون الطلابية، المساعد الإداري، التوجيه الطلابي،
-        النشاط، التوجيه الصحي وخدمة المستفيد، في تجربة أنيقة وسهلة مع لوحة أداء وإحصاءات وتقارير جاهزة للطباعة.
-      </p>
-      <div class="chips">
-        <span class="chip">تصميم أنيق</span>
-        <span class="chip">لوحة أداء</span>
-        <span class="chip">تقارير ذكية</span>
-        <span class="chip">قابلة للتوسّع</span>
+  <!-- الهيرو -->
+  <section class="hero">
+    <div class="hero-inner glass">
+      <!-- العمود الأيمن: التعريف -->
+      <div class="intro">
+        <h1>منصة إدارة طلابية برؤية مستقبلية</h1>
+        <p class="lead">
+          توحِّد <b>Neuron</b> أعمال الشؤون الطلابية، المساعد الإداري، التوجيه الطلابي،
+          النشاط الطلابي، التوجيه الصحي وخدمة المستفيد في تجربة أنيقة وسهلة مع
+          <b>لوحة أداء</b> وإحصاءات وتقارير جاهزة للطباعة.
+        </p>
+        <ul class="chips">
+          <li>تصميم أنيق</li><li>لوحة أداء</li><li>تقارير ذكية</li><li>قابلة للتوسّع</li>
+        </ul>
       </div>
-    </section>
-  </main>
 
-  <!-- نافذة إنشاء حساب -->
-  <dialog id="signupDialog">
-    <form method="dialog" class="dialog-card">
-      <h3>إنشاء حساب جديد</h3>
-      <label>الاسم
-        <input type="text" placeholder="الاسم الثلاثي" required>
-      </label>
-      <label>البريد الإلكتروني
-        <input type="email" placeholder="name@school.edu" required>
-      </label>
-      <label>كلمة المرور
-        <input type="password" placeholder="••••••••" required>
-      </label>
-      <menu>
-        <button value="cancel" class="btn">إلغاء</button>
-        <button value="ok" class="btn primary">إنشاء</button>
-      </menu>
-    </form>
-  </dialog>
+      <!-- العمود الأيسر: تسجيل الدخول -->
+      <div class="auth glass">
+        <h2>تسجيل الدخول</h2>
+        <form id="loginForm">
+          <label>البريد الإلكتروني</label>
+          <input type="email" placeholder="name@school.edu" required>
+          <label>كلمة المرور</label>
+          <input type="password" placeholder="••••••••" required>
+          <button type="submit">دخول</button>
+          <div class="muted">
+            مستخدم جديد؟
+            <a href="#" id="createAccount">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
-    نسخة تجريبية · قابلة للتطوير · © Neuron
+    <span>© Neuron • نسخة تجريبية قابلة للتطوير</span>
   </footer>
 
   <script src="app.js"></script>
