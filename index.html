@@ -5,90 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Neuron | المنصة المدرسية الذكية</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- شريط علوي -->
   <header class="topbar">
     <div class="brand">
-      <!-- شعار Neuron (SVG مضمّن – لا يحتاج صورة خارجية) -->
-      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M44 6v8l-6 6v10l6 6v12l-6 6-6-6V46l-6-6V30l6-6v-8l6-6z" fill="none" stroke="#1f7ea8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="38" cy="6" r="2" fill="#1f7ea8"/><circle cx="38" cy="14" r="2" fill="#1f7ea8"/>
-        <circle cx="32" cy="22" r="2" fill="#1f7ea8"/><circle cx="26" cy="30" r="2" fill="#1f7ea8"/>
-        <circle cx="32" cy="38" r="2" fill="#1f7ea8"/><circle cx="32" cy="54" r="2" fill="#1f7ea8"/>
-      </svg>
-      <div class="titles">
-        <strong class="name">Neuron</strong>
-        <span class="subtitle">المنصة المدرسية الذكية</span>
+      <img src="assets/neuron-logo.png" alt="Neuron" class="logo">
+      <div class="brand-text">
+        <h1>Neuron</h1>
+        <span>المنصة المدرسية الذكية</span>
       </div>
     </div>
   </header>
 
-  <!-- البطل: يمين تعريف – يسار تسجيل دخول -->
   <main class="hero">
-    <!-- التعريف (يمين) -->
-    <section class="about">
-      <h1>منصة إدارة طلابية برؤية مستقبلية</h1>
-      <p>
-        «Neuron» توحّد أعمال <b>الشؤون الطلابية</b>، <b>المساعد الإداري</b>،
-        <b>التوجيه الطلابي</b>، <b>النشاط</b>، <b>التوجيه الصحي</b> و
-        <b>خدمة المستفيد</b>، مع لوحة أداء وإحصاءات وتقارير جاهزة للطباعة.
-      </p>
-      <ul class="chips">
-        <li>تصميم أنيق</li>
-        <li>لوحة أداء</li>
-        <li>تقارير شهرية</li>
-        <li>قابلية التوسّع</li>
-      </ul>
+    <!-- يسار: تسجيل الدخول -->
+    <section class="card login-card">
+      <h2>تسجيل الدخول</h2>
+      <form id="loginForm">
+        <label>البريد الإلكتروني
+          <input type="email" placeholder="name@school.edu" required>
+        </label>
+        <label>كلمة المرور
+          <input type="password" placeholder="••••••••" required>
+        </label>
+        <button type="submit" class="btn primary">دخول</button>
+        <div class="muted small">
+          مستخدم جديد؟
+          <a href="#" id="openSignUp">إنشاء حساب</a>
+        </div>
+      </form>
     </section>
 
-    <!-- تسجيل الدخول (يسار) -->
-    <section class="auth">
-      <div class="card">
-        <h2>تسجيل الدخول</h2>
-        <form onsubmit="return fakeLogin(event)">
-          <label>البريد الإلكتروني</label>
-          <input type="email" placeholder="name@school.edu" required />
-          <label>كلمة المرور</label>
-          <input type="password" placeholder="••••••••" required />
-          <button type="submit">دخول</button>
-        </form>
-        <div class="alt">
-          مستخدم جديد؟
-          <a href="#" onclick="return showSignup()">إنشاء حساب</a>
-        </div>
-      </div>
-
-      <div class="card hidden" id="signup">
-        <h2>إنشاء حساب</h2>
-        <form onsubmit="return fakeSignup(event)">
-          <label>الاسم</label>
-          <input type="text" placeholder="اسمك" required />
-          <label>البريد الإلكتروني</label>
-          <input type="email" placeholder="name@school.edu" required />
-          <label>كلمة المرور</label>
-          <input type="password" placeholder="••••••••" required />
-          <button type="submit">تسجيل</button>
-        </form>
-        <div class="alt">
-          لديك حساب؟ <a href="#" onclick="return showLogin()">تسجيل الدخول</a>
-        </div>
+    <!-- يمين: نبذة تعريفية -->
+    <section class="card intro-card">
+      <h2>منصة إدارة طلابية برؤية مستقبلية</h2>
+      <p>
+        توحّد <strong>Neuron</strong> أعمال الشؤون الطلابية، المساعد الإداري، التوجيه الطلابي،
+        النشاط، التوجيه الصحي وخدمة المستفيد، في تجربة أنيقة وسهلة مع لوحة أداء وإحصاءات وتقارير جاهزة للطباعة.
+      </p>
+      <div class="chips">
+        <span class="chip">تصميم أنيق</span>
+        <span class="chip">لوحة أداء</span>
+        <span class="chip">تقارير ذكية</span>
+        <span class="chip">قابلة للتوسّع</span>
       </div>
     </section>
   </main>
 
-  <!-- ذيل بسيط -->
+  <!-- نافذة إنشاء حساب -->
+  <dialog id="signupDialog">
+    <form method="dialog" class="dialog-card">
+      <h3>إنشاء حساب جديد</h3>
+      <label>الاسم
+        <input type="text" placeholder="الاسم الثلاثي" required>
+      </label>
+      <label>البريد الإلكتروني
+        <input type="email" placeholder="name@school.edu" required>
+      </label>
+      <label>كلمة المرور
+        <input type="password" placeholder="••••••••" required>
+      </label>
+      <menu>
+        <button value="cancel" class="btn">إلغاء</button>
+        <button value="ok" class="btn primary">إنشاء</button>
+      </menu>
+    </form>
+  </dialog>
+
   <footer class="footer">
-    <span>© Neuron • نسخة تجريبية للعرض – قابلة للتطوير</span>
+    نسخة تجريبية · قابلة للتطوير · © Neuron
   </footer>
 
-  <script>
-    // تبديل بين الدخول/التسجيل (محاكي بسيط الآن)
-    const signupCard = document.getElementById('signup');
-    function showSignup(){ signupCard.classList.remove('hidden'); return false; }
-    function showLogin(){ signupCard.classList.add('hidden'); return false; }
-    function fakeLogin(e){ e.preventDefault(); alert('تم الدخول (نموذج تجريبي).'); return false; }
-    function fakeSignup(e){ e.preventDefault(); alert('تم إنشاء الحساب (نموذج تجريبي).'); showLogin(); return false; }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
