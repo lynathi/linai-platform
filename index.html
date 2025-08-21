@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Neuron | المنصة المدرسية الذكية</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo-neuron.png" alt="Neuron" onerror="this.style.display='none'">
+      <h1>Neuron</h1>
+    </div>
+    <nav class="links">
+      <a href="#auth">تسجيل / دخول</a>
+      <a href="#about">نبذة</a>
+      <a href="#dashboard">لوحة الأداء</a>
+      <a href="#sections">الأقسام</a>
+    </nav>
+  </header>
+
+  <section id="auth" class="hero">
+    <h2>منصة إدارة طلابية برؤية مستقبلية</h2>
+    <p class="tagline">نظام موحّد يسهّل أعمال الشؤون الطلابية، المساعد الإداري، النشاط، التوجيه، الصحي وخدمة المستفيد.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#" onclick="fakeLogin('admin')">تسجيل الدخول</a>
+      <a class="btn ghost" href="#" onclick="fakeSignup()">مستخدم جديد</a>
+    </div>
+    <small class="hint">* ربط Google/Nor لاحقاً — نبدأ الآن بالمحلي.</small>
+  </section>
+
+  <section id="about" class="card">
+    <h3>نبذة مختصرة</h3>
+    <p>
+      هذه نسخة أساس ثابتة قابلة للتوسّع. سنضيف بعدها الأقسام التفصيلية والجداول
+      (المهام اليومية، الغياب، الإحصاءات، النماذج… إلخ) على نفس القاعدة بدون إعادة بناء.
+    </p>
+  </section>
+
+  <section id="dashboard" class="card">
+    <h3>لوحة الأداء</h3>
+    <div class="kpis">
+      <div class="kpi"><span class="num" id="kpi-abs-today">0</span><span>غياب اليوم</span></div>
+      <div class="kpi"><span class="num" id="kpi-abs-month">0</span><span>إجمالي غياب الشهر</span></div>
+      <div class="kpi"><span class="num" id="kpi-lates">0</span><span>تأخيرات</span></div>
+      <div class="kpi"><span class="num" id="kpi-requests">0</span><span>طلبات خدمة مستفيد</span></div>
+    </div>
+  </section>
+
+  <section id="sections" class="card">
+    <h3>الأقسام</h3>
+    <div class="grid">
+      <a class="tile" href="#" onclick="openSection('students')">الشؤون الطلابية</a>
+      <a class="tile" href="#" onclick="openSection('assistant')">المساعد الإداري</a>
+      <a class="tile" href="#" onclick="openSection('activities')">النشاط الطلابي</a>
+      <a class="tile" href="#" onclick="openSection('guidance')">التوجيه الطلابي</a>
+      <a class="tile" href="#" onclick="openSection('health')">التوجيه الصحي</a>
+      <a class="tile" href="#" onclick="openSection('services')">ورش العمل / الاجتماعات / خدمة المستفيد</a>
+    </div>
+  </section>
+
+  <section id="workspace" class="card" hidden>
+    <h3 id="ws-title">القسم</h3>
+    <div id="ws-body">سيُضاف هنا جدول/نماذج/رفع ملفات (Word/PDF/Excel) حسب القسم.</div>
+  </section>
+
+  <footer class="foot">© Neuron • صنع بحب لأجل لِيناي</footer>
+  <script src="app.js"></script>
+</body>
+</html>
