@@ -1,94 +1,30 @@
 :root{
-  --bg:#0f1720;        /* خلفية داكنة أنيقة */
-  --panel:#16222e;     /* لوحات */
-  --muted:#8fbdd3;     /* نص ثانوي */
-  --brand:#1f7ea8;     /* لون Neuron */
-  --brand-2:#22b8cf;   /* تدرّج مساعد */
-  --white:#eef7fb;
+  --bg: #0f172a;
+  --surface: #111827;
+  --card: #0b1220;
+  --text: #e5e7eb;
+  --muted:#a3a3a3;
+  --primary:#22d3ee;
+  --primary-2:#0ea5b7;
+  --ring: #22d3ee55;
 }
-
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  background: radial-gradient(1200px 600px at 80% -10%, rgba(34,184,207,.12), transparent 60%) , var(--bg);
-  color: var(--white);
-  font-family: "Cairo", system-ui, -apple-system, Segoe UI, Tahoma, Arial, sans-serif;
-  line-height:1.7;
-}
-
-.topbar{
-  position:sticky; top:0; z-index:10;
-  backdrop-filter: blur(8px);
-  background: rgba(15,23,32,.55);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.topbar .brand{
-  display:flex; align-items:center; gap:.9rem;
-  padding: .9rem 1.2rem;
-}
-.logo{width:34px;height:34px;filter: drop-shadow(0 0 10px rgba(31,126,168,.35));}
-.titles .name{font-size:1.25rem;letter-spacing:.2px}
-.titles .subtitle{display:block;font-size:.85rem;color:var(--muted)}
-
-.hero{
-  max-width: 1100px; margin: 2.2rem auto; padding: 0 1rem;
-  display: grid;
-  grid-template-columns: 1.2fr .9fr; /* يمين تعريف – يسار دخول */
-  gap: 1.4rem;
-}
-.about{
-  background: linear-gradient(180deg, rgba(34,184,207,.08), transparent 55%), var(--panel);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:16px; padding:1.4rem 1.6rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,.25);
-}
-.about h1{margin:.2rem 0 1rem;font-size:1.9rem}
-.about p{color:#cfe7f5}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none}
-.chips li{
-  background: rgba(31,126,168,.12);
-  border: 1px solid rgba(31,126,168,.35);
-  color:#cfe7f5; padding:.45rem .7rem; border-radius:999px; font-size:.9rem;
-}
-
-.auth{display:flex;flex-direction:column;gap:1rem}
-.card{
-  background: var(--panel);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:16px; padding:1.1rem 1.2rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,.25);
-}
-.card h2{margin:.2rem 0 1rem}
-label{display:block;margin:.65rem 0 .25rem;color:var(--muted);font-size:.9rem}
-input{
-  width:100%; background:#0b121a; color:var(--white);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:10px; padding:.7rem .8rem; outline:none;
-}
-input:focus{border-color:var(--brand); box-shadow:0 0 0 3px rgba(31,126,168,.25)}
-
-button{
-  width:100%; margin-top:1rem; padding:.8rem 1rem;
-  border:0; border-radius:10px; color:#04141b; font-weight:700;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  cursor:pointer;
-  box-shadow: 0 10px 25px rgba(34,184,207,.25);
-}
-button:hover{filter:brightness(1.05)}
-.alt{margin-top:.7rem; color:#cfe7f5; font-size:.95rem}
-.alt a{color:#78d9ff; text-decoration:none;border-bottom:1px dashed #78d9ff}
-.alt a:hover{opacity:.85}
-
-.hidden{display:none}
-
-.footer{
-  margin: 2.5rem auto 1.2rem; text-align:center; color:var(--muted);
-  font-size:.92rem;
-}
-
-/* استجابة للجوال */
-@media (max-width: 900px){
-  .hero{grid-template-columns: 1fr; gap:1rem}
-  .about{order:1}
-  .auth{order:2}
-}
+html,body{margin:0;padding:0;font-family:'Cairo',system-ui,-apple-system; background:var(--bg); color:var(--text)}
+a{color:var(--primary);text-decoration:none}
+.small{font-size:.9rem} .muted{color:var(--muted)}
+.topbar{display:flex;justify-content:center;padding:14px 16px;background:linear-gradient(180deg,#0b1220,#0b122000)}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 0 8px #22d3ee55)}
+.brand-text h1{margin:0;font-size:1.4rem;font-weight:700}
+.brand-text span{font-size:.95rem;color:var(--muted)}
+.hero{max-width:1100px;margin:28px auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 16px}
+.card{background:linear-gradient(180deg,#0b1220,#0b122055);border:1px solid #1f2937;border-radius:14px;padding:20px;box-shadow:0 10px 30px #0008}
+.login-card h2,.intro-card h2{margin:6px 0 14px}
+label{display:block;margin:10px 0;color:#cfd3da}
+input{width:100%;margin-top:6px;padding:10px 12px;border-radius:10px;border:1px solid #1f2937;background:#0b1220;color:var(--text);outline:none}
+input:focus{border-color:var(--primary);box-shadow:0 0 0 4px var(--ring)}
+.btn{appearance:none;border:none;border-radius:10px;padding:12px 14px;background:#1f2937;color:var(--text);cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#03242a;font-weight:700}
+.btn:active{transform:translateY(1px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{padding:6px
